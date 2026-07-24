@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeekAI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="search-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="logo-text">SeekAI</span>
+            </div>
+
+            <div class="search-bar-wrapper">
+                <div class="search-bar" id="searchBar">
+                    <button class="add-btn" type="button" title="Add"><i class="fas fa-plus"></i></button>
+                    <input type="text" id="searchInput" placeholder="Search or ask AI">
+                    <button class="ai-mode-btn" id="aiModeBtn" type="button" title="AI Mode">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <span>AI Mode</span>
+                    </button>
+                    <button id="searchBtn" class="submit-btn" type="button" title="Search"><i class="fas fa-magnifying-glass"></i></button>
+                </div>
+                <div id="suggestionsDropdown" class="suggestions-dropdown" style="display: none;">
+                    <div id="suggestionsList"></div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <div class="avatar">S</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="aiOverview" style="display: none;" class="ai-overview">
+            <div class="ai-header">
+                <div class="ai-title">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <span>AI Mode</span>
+                </div>
+                <span class="ai-badge">Smart answer</span>
+            </div>
+            <div id="aiContent" class="ai-content"></div>
+        </div>
+
+        <div class="results-stats" id="resultsStats" style="display: none;">
+            <span id="resultCount">About 0 results</span>
+            <span id="processingTime">(0 ms)</span>
+        </div>
+
+        <div id="welcomeScreen" class="welcome-screen">
+            <div class="welcome-content">
+                <div class="quick-links">
+                    <button class="quick-btn" data-query="What is artificial intelligence?"><i class="fas fa-wand-magic-sparkles"></i><span>AI answers</span></button>
+                    <button class="quick-btn" data-query="python tutorial"><i class="fas fa-graduation-cap"></i><span>Learn</span></button>
+                    <button class="quick-btn" data-query="latest tech trends"><i class="fas fa-chart-line"></i><span>Trends</span></button>
+                    <button class="quick-btn" data-query="web development tutorial"><i class="fas fa-code"></i><span>Build</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Searching...</p>
+        </div>
+
+        <div id="resultsContainer"></div>
+    </main>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
